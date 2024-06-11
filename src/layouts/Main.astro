@@ -5,20 +5,40 @@ const { title } = Astro.props.frontmatter || Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<meta name="description" content="My mind." />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{title}</title>
+		<title>Vivek ✦</title>
+
 	</head>
+
 	<body>
 		<div class="container max-w-full min-h-screen bg-brand">
 			<div class="mx-auto max-w-xl px-4 py-8">
-				<h1 class="text-4xl text-white font-bold mb-4"><a href="/">{title}</a></h1>
+				<h1 class="text-4xl text-center text-white font-serif mb-4"><a href="/">{title}</a></h1>
 				<slot />
 			</div>
 		</div>
 
-		<footer class="text-center bg-indigo-900 text-white p-3">
-			Copyright {new Date().getFullYear()} | Powered by <a href="https://hygraph.com">Hygraph</a>
+		<footer class="text-center bg-emerald-50 text-black font-serif p-3">
+			Have thoughts? <a href="mailto:v1033@outlook.com">Email</a> | <a href="https://x.com/thekernelkiller" target="_blank">Twitter</a>
 		</footer>
 	</body>
 </html>
+<!-- 
+---
+const title = Astro.props.title;
+---
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <link href="/dist/output.css" rel="stylesheet">
+  </head>
+  <body class="font-serif">
+    <slot />
+  </body>
+</html>
+ -->

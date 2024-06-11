@@ -6,8 +6,10 @@ pageInfo {
 postsArray: edges {
     cursor
     post: node {
+        title
         slug
         id
+        excerpt
         createdAt
         content {
             html
@@ -16,8 +18,10 @@ postsArray: edges {
 }`;
 
 export const postFragment = `
+title
 id
 slug
+excerpt
 content {
     html
 }

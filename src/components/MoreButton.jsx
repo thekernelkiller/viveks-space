@@ -66,14 +66,14 @@ function MoreButton({currentCursor, size=1, ENDPOINT}) {
     return (
         <>
         {posts.map((post) => (
-            <div key={post.cursor} className="prose bg-white  max-w-4xl mb-4 p-4 rounded-md">
+            <div key={post.cursor} className="text-md bg-emerald-50 max-w-4xl mb-6 p-6 rounded-3xl">
                 <PostContent post={post.post} />
             </div>
         ))}
 
 
-        {loading && <div className="bg-white mb-4 p-4 rounded-md text-center">Loading...</div>}
-        {hasNext && <button className="bg-white mb-4 p-4 rounded-md" onClick={getMore}>Get More </button>}
+        {loading && <div className="bg-emerald-50 mb-6 p-6 rounded-3xl text-center">Loading...</div>}
+        {hasNext && <button className="bg-emerald-50 mb-6 p-6 rounded-3xl" onClick={getMore}>Get More </button>}
 
 
         </>

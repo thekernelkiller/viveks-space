@@ -44,18 +44,18 @@ const More = ({ currentCursor, size = 1, ENDPOINT = "" }) => {
       {posts.map((post) => (
         <div
           key={post.cursor}
-          className="prose bg-white  max-w-4xl mb-4 p-4 rounded-md"
+          className="text-md bg-emerald-50 max-w-4xl mb-6 p-6 font-serif rounded-3xl"
         >
           <PostContent post={post.post} />
         </div>
       ))}
       {loading && (
-        <div className="bg-white mb-4 p-4 rounded-md text-center">
+        <div className="text-md bg-emerald-50 max-w-4xl mb-6 p-6 font-serif rounded-3xl text-center">
           Loading...
         </div>
       )}
       {hasNext && (
-        <button className="bg-white mb-4 p-4 rounded-md" onClick={getMore}>
+        <button className="text-md bg-emerald-50 mb-6 p-6 font-serif rounded-3xl" onClick={getMore}>
           Get More{" "}
         </button>
       )}

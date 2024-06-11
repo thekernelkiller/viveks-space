@@ -15,11 +15,10 @@ const response = await fetch(
     },
     body: JSON.stringify({
       query: `query MyQuery($size: Int) {
-				pages:postsConnection(first: $size,  orderBy: createdAt_DESC) {
-					${postsFragment}
-				}
-			}
-		`,
+  				pages: postsConnection(first: $size, orderBy: createdAt_DESC) {
+    				${postsFragment} 
+  			}
+		}`,
 		variables: {size: pageSize}
     }),
   }
@@ -29,8 +28,11 @@ const response = await fetch(
 const data = await response.json();
 const {pages} = data.data;
 ---
-
-<Main title="My Microblog">
+<link
+  rel="icon"
+  href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🙂‍↔️</text></svg>"
+/>
+<Main title="Vivekananda Sai ✦">
   	<div>
 		{pages.postsArray.map((post) => {
 		return <Post post={post.post} />
@@ -38,3 +40,4 @@ const {pages} = data.data;
 	</div>
 	{pages.pageInfo.hasNextPage && <More client:visible ENDPOINT={import.meta.env.ASTRO_HYGRAPH_ENDPOINT} size={pageSize} currentCursor={pages.pageInfo.endCursor} />}
 </Main>
+

@@ -3,8 +3,11 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				"brand": "rgb(102,99,253)"
-			}
+				brand: "rgb(24, 56,52)"
+			},
+			// fontFamily: {
+			// 	serif: ['Times New Roman', 'serif', 'serif-bold'],
+			// }
 		},
 	},
 	plugins: [require('@tailwindcss/typography')],

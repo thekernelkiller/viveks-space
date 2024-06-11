@@ -1,0 +1,40 @@
+---
+import Main from "../layouts/Main.astro";
+import Post from "../components/Post.astro";
+import More from "../components/More.jsx";
+import { postsFragment } from '../../fragments/posts'
+
+const pageSize = 3;
+const response = await fetch(
+  import.meta.env.ASTRO_HYGRAPH_ENDPOINT,
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      query: `query MyQuery($size: Int) {
+				pages:postsConnection(first: $size,  orderBy: createdAt_DESC) {
+					${postsFragment}
+				}
+			}
+		`,
+		variables: {size: pageSize}
+    }),
+  }
+);
+
+
+const data = await response.json();
+const {pages} = data.data;
+---
+
+<Main title="My Microblog">
+  	<div>
+		{pages.postsArray.map((post) => {
+		return <Post post={post.post} />
+		})}
+	</div>
+	{pages.pageInfo.hasNextPage && <More client:visible ENDPOINT={import.meta.env.ASTRO_HYGRAPH_ENDPOINT} size={pageSize} currentCursor={pages.pageInfo.endCursor} />}
+</Main>

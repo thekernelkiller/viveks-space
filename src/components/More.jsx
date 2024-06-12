@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+/**
+ * @param {{ post: any }} props
+ */
+
 import PostContent from "./PostContent";
 import { postsFragment } from "../../fragments/posts";
 const query = `query MyQuery($cursor: String!, $size: Int!) {

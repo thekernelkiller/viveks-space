@@ -1,8 +1,8 @@
 import { useState } from "react"
 import PostContent from '../components/PostContent'
-/**
- * @param {{ post: any }} props
- */
+// /**
+//  * @param {{ post: any }} props
+//  */
 
 
 const query = `query MyQuery($cursor: String!, $size: Int!) {

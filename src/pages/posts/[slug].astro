@@ -3,6 +3,10 @@ import Main from "../../layouts/Main.astro";
 import Post from "../../components/Post.astro";
 import { postFragment } from "../../../fragments/posts";
 
+// /**
+//  * @param {{ post: any }} props
+//  */
+
 export async function getStaticPaths() {
   const response = await fetch(import.meta.env.ASTRO_HYGRAPH_ENDPOINT, {
     method: "POST",
@@ -22,7 +26,7 @@ export async function getStaticPaths() {
   });
 
   const json = await response.json();
-  const paths = json.data.posts.map((post) => ({
+  const paths = json.data.posts.map((post:any) => ({
     params: { slug: post.slug },
     props: { post },
   }));

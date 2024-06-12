@@ -4,6 +4,10 @@ import Post from "../components/Post.astro";
 import More from "../components/More.jsx";
 import { postsFragment } from '../../fragments/posts'
 
+// /**
+//  * @param {{ post: any }} props
+//  */
+
 const pageSize = 3;
 const response = await fetch(
   import.meta.env.ASTRO_HYGRAPH_ENDPOINT,
@@ -34,7 +38,7 @@ const {pages} = data.data;
 />
 <Main title="Vivekananda Sai ✦">
   	<div>
-		{pages.postsArray.map((post) => {
+		{pages.postsArray.map((post:any) => {
 		return <Post post={post.post} />
 		})}
 	</div>

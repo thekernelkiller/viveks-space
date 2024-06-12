@@ -11,9 +11,7 @@ postsArray: edges {
         id
         excerpt
         createdAt
-        content {
-            html
-        }
+        content
     }
 }`;
 
@@ -22,8 +20,6 @@ title
 id
 slug
 excerpt
-content {
-    html
-}
+content
 createdAt
 `;

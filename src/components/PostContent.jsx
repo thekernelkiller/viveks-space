@@ -1,3 +1,6 @@
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+
 const PostContent = ({ post }) => {
   const { content, title, slug, createdAt } = post;
 
@@ -6,12 +9,13 @@ const PostContent = ({ post }) => {
   });
   const timeString = new Date(createdAt).toLocaleTimeString("en-US", {
     timeStyle: "short",
+    hour12: false
   });
 
   return (
     <>
       <h2 className="text-2xl text-center font-bold mb-3">{title}</h2>
-      <div dangerouslySetInnerHTML={{ __html: content.html }} className="mb-2"></div>
+      <ReactMarkdown className="prose md:prose-md" remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown> 
       <time dateTime="{createdAt}">
         <a href={`/posts/${slug}`} className="text-md text-center underline">
           {dateString} at {timeString}

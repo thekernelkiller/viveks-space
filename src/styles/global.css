@@ -1,0 +1,69 @@
+/* global.css or similar
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Headings --- */
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 { 
+    @apply font-bold; /* Or your preferred heading font weight */
+}
+
+/* --- Code --- */
+pre {
+    @apply bg-emerald-100 rounded-md p-3; 
+}
+
+code { 
+    @apply bg-zinc-50 rounded-md px-1 py-0.5;
+}
+
+/* --- Quotes --- */
+blockquote {
+    @apply border-l-4 border-emerald-500 bg-emerald-100 p-3 rounded-md;
+}
+
+/* --- Lists --- */
+.prose ul > li::marker { /* Unordered list marker */
+    @apply border-emerald-500;
+}
+
+.prose ol > li::marker { /* Ordered list marker */
+    @apply text-emerald-500;
+}
+
+/* --- Links --- */
+.prose a {
+    @apply text-emerald-600 underline;
+}
+
+.prose a:hover {
+    @apply text-emerald-700; 
+}
+
+/* --- Tables --- */
+.prose table { 
+    @apply w-full table-auto border-collapse border border-emerald-300;
+}
+
+.prose th, .prose td {
+    @apply border border-emerald-300 px-4 py-2;
+}
+
+.prose th {
+    @apply bg-emerald-100; 
+}
+
+/* --- Horizontal Rules --- */
+.prose hr {
+    @apply border-t border-emerald-300 my-4;
+}
+
+/* --- Strong/Bold --- */
+.prose strong, .prose b {
+    @apply font-bold; 
+}
+
+/* --- Emphasis/Italic --- */
+.prose em, .prose i {
+    @apply italic; 
+}

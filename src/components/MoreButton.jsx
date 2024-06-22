@@ -75,8 +75,8 @@ function MoreButton({currentCursor, size=1, ENDPOINT}) {
         ))}
 
 
-        {loading && <div className="bg-emerald-50 mb-6 p-6 rounded-3xl text-center">Loading...</div>}
-        {hasNext && <button className="bg-emerald-50 mb-6 p-6 rounded-3xl" onClick={getMore}>Get More </button>}
+        {loading && <div className="bg-blue-50 mb-6 p-6 rounded-3xl text-center">Loading...</div>}
+        {hasNext && <button className="bg-blue-50 mb-6 p-6 rounded-3xl" onClick={getMore}>Get More </button>}
 
 
         </>

@@ -31,7 +31,7 @@ const {pages} = data.data;
   rel="icon"
   href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👀</text></svg>"
 />
-<Main title="Vivekananda Sai ✦">
+<Main title="Vivekananda Sai ✦" showDescription={true}>
   	<div>
 		{pages.postsArray.map((post:any) => {
 		return <Post post={post.post} showExcerpt={true} />
@@ -39,6 +39,17 @@ const {pages} = data.data;
 	</div>
 	{pages.pageInfo.hasNextPage && <More client:visible ENDPOINT={import.meta.env.ASTRO_HYGRAPH_ENDPOINT} size={pageSize} currentCursor={pages.pageInfo.endCursor} />}
 </Main>
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- ---
 import Main from "../layouts/Main.astro";

@@ -4,7 +4,7 @@ module.exports = {
 		extend: {
 			colors: {
 				brand: "rgb(23, 37, 84)",
-                'bg-blue-50': "rgb(239, 246, 255)"
+                'accent-colour': "rgb(239, 246, 255)"
 			},
 			// fontFamily: {
 			// 	serif: ['Times New Roman', 'serif', 'serif-bold'],

@@ -6,7 +6,7 @@ import PostContent from "./PostContent";
 const { post, showExcerpt = false } = Astro.props;
 ---
 
-<div class="text-md bg-emerald-50 max-w-4xl mb-6 p-6 font-serif rounded-3xl">
+<div class="text-md bg-accent-colour max-w-4xl mb-6 p-6 font-serif rounded-3xl">
   {showExcerpt ? (
     <>
       <h2 class="text-2xl font-bold mb-3">{post.title}</h2>

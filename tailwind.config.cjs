@@ -3,8 +3,8 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				brand: "rgb(4, 4, 68)",
-                'blue-50': "rgb(247, 248, 252)"
+				brand: "rgb(102, 43, 35)",
+                'blue-50': "rgb(193, 192, 189)"
 			},
 			// fontFamily: {
 			// 	serif: ['Times New Roman', 'serif', 'serif-bold'],

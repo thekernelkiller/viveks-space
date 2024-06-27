@@ -3,7 +3,7 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				brand: "rgb(23, 37, 84)",
+				brand: "#121231",
                 'accent-colour': "rgb(239, 246, 255)"
 			},
 			// fontFamily: {

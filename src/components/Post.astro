@@ -3,6 +3,31 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from "remark-gfm";
 import PostContent from "./PostContent";
 
+const { post, showExcerpt = false } = Astro.props;
+---
+
+<div class="text-md bg-emerald-50 max-w-4xl mb-6 p-6 font-serif rounded-3xl">
+  {showExcerpt ? (
+    <>
+      <h2 class="text-2xl font-bold mb-3">{post.title}</h2>
+      <p>{post.excerpt}</p>
+    </>
+  ) : (
+    <ReactMarkdown 
+      className="prose lg:prose-xl" 
+      remarkPlugins={[remarkGfm]}
+    >
+      {post.content}
+    </ReactMarkdown>
+  )}
+  <PostContent post={post} showExcerpt={showExcerpt} />
+</div>
+
+<!-- ---
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from "remark-gfm";
+import PostContent from "./PostContent";
+
 const { post } = Astro.props;
 ---
 
@@ -14,4 +39,4 @@ const { post } = Astro.props;
         {post.content}
     </ReactMarkdown>
   <PostContent post={post} />
-</div>
+</div> -->

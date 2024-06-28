@@ -14,12 +14,12 @@ const showDescription = Astro.props.showDescription || false;
   <body class="flex flex-col min-h-full">
     <div class="flex-grow bg-brand">
       <div class="container mx-auto max-w-xl px-4 py-8"> 
-        <h1 class="text-4xl text-center text-white font-serif mb-1.5">
+        <h1 class="text-4xl text-center text-white font-serif mb-3">
           <a href="/">{title}</a>
         </h1>
 
         {showDescription && (
-          <p class="text-white text-center font-serif text-md mb-4"> 
+          <p class="text-white text-center font-serif text-sm mb-6"> 
             Hello, welcome to my blog space! See <a href="https://vivekirl.studio/" target="_blank" class="text-blue-50 underline">vivekirl.studio</a> for my other internet places.
           <br> \ (•◡•) /
           </p>	
